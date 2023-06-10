@@ -12,7 +12,8 @@
     "react-redux": "^8.0.5",
     "react-redux-loading-bar": "^5.0.4",
     "react-router-dom": "^6.11.2",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "vitest": "^0.31.1"
   },
   "scripts": {
     "dev": "vite",
@@ -20,7 +21,8 @@
     "build": "react-scripts build",
     "test": "vitest",
     "eject": "react-scripts eject",
-    "e2e": "cypress run"
+    "e2e": "cypress run",
+    "ci:test": "vitest --no-watch && start-server-and-test start http-get://0.0.0.0:3000 e2e"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +55,6 @@
     "eslint-plugin-react": "^7.31.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^22.1.0",
-    "vitest": "^0.32.0"
+    "start-server-and-test": "^2.0.0"
   }
 }

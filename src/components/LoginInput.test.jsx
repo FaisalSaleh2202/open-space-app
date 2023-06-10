@@ -1,8 +1,14 @@
-import React from 'react';
-import {
-  describe, it, expect, afterEach, vi,
-} from 'vitest';
+/**
+ * skenario testing
+ *
+ * - LoginInput component
+ *   - should handle username typing correctly
+ *   - should handle password typing correctly
+ *   - should call login function when login button is clicked
+ */
 
+import React from 'react';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
@@ -39,6 +45,8 @@ describe('LoginInput component', () => {
     expect(passwordInput).toHaveValue('passwordtest');
   });
 
+  // ... skenario pengujian lainnya
+
   it('should call login function when login button is clicked', async () => {
     // Arrange
     const mockLogin = vi.fn();
@@ -53,7 +61,7 @@ describe('LoginInput component', () => {
     await userEvent.click(loginButton);
 
     // Assert
-    expect(mockLogin).toBeCalledWith({
+    expect(mockLogin).toHaveBeenCalledWith({
       id: 'usernametest',
       password: 'passwordtest',
     });
